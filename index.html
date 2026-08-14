@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Ian's Bachelor Party — Denver, Labor Day Weekend 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light only;
+    --spruce:#12241B;
+    --pine:#1D3A2B;
+    --fairway:#2E5C41;
+    --chalk:#F4F1E7;
+    --sand:#E4DCC8;
+    --sunset:#E8722C;
+    --brass:#C2A25B;
+    --river:#4A76A8;
+    --ink:#17251E;
+    --line:rgba(23,37,30,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;background:#F4F1E7 !important}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  .bgfix{
+    position:fixed;inset:0;z-index:-1;
+    background:#F4F1E7 !important;
+    pointer-events:none;
+  }
+  body{
+    font-family:'Archivo',sans-serif;
+    font-variation-settings:"wdth" 100;
+    background:#F4F1E7 !important;
+    color:#17251E !important;
+    line-height:1.55;
+  }
+  main{background:#F4F1E7}
+  @media (prefers-color-scheme: dark){
+    html,body,main,.bgfix{background:#F4F1E7 !important}
+    body{color:#17251E !important}
+  }
+
+  /* ---------- Hero ---------- */
+  header{
+    background:linear-gradient(178deg, var(--spruce) 0%, var(--pine) 62%, #274D36 100%);
+    color:var(--chalk);
+    padding:44px 22px 34px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:0;height:70px;
+    background:
+      linear-gradient(115deg, transparent 42%, rgba(232,114,44,.25) 42.5%, rgba(232,114,44,.25) 47%, transparent 47.5%),
+      linear-gradient(65deg, transparent 55%, rgba(194,162,91,.30) 55.5%, rgba(194,162,91,.30) 60%, transparent 60.5%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--brass);margin-bottom:14px;
+  }
+  h1{
+    font-variation-settings:"wdth" 118;
+    font-weight:880;
+    font-size:clamp(34px,8vw,58px);
+    line-height:.98;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  h1 .accent{color:var(--sunset)}
+  .hero-sub{margin-top:16px;font-size:15px;color:rgba(244,241,231,.82);max-width:520px}
+  .hero-facts{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .fact{
+    border:1px solid rgba(244,241,231,.28);
+    padding:7px 12px;border-radius:3px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.03em;
+  }
+
+  /* ---------- Day bar (decorative — no links) ---------- */
+  .daybar{
+    background:var(--spruce);
+    display:flex;overflow-x:auto;
+    border-bottom:3px solid var(--sunset);
+  }
+  .daybar span{
+    color:var(--sand);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    padding:12px 13px;white-space:nowrap;flex:1;text-align:center;
+  }
+
+  main{max-width:820px;margin:0 auto;padding:10px 18px 70px}
+
+  /* ---------- Day sections ---------- */
+  section.day{margin-top:38px;scroll-margin-top:64px}
+  .day-head{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px;
+  }
+  .day-date{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:#1B4630;font-weight:600;
+  }
+  .day-title{
+    font-variation-settings:"wdth" 112;font-weight:820;
+    font-size:clamp(22px,5vw,30px);text-transform:uppercase;color:#101B14;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{list-style:none;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .tl-head{
+    display:grid;grid-template-columns:82px 1fr 96px;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:#6B7A70;background:var(--sand);
+    border-bottom:1px solid var(--line);
+  }
+  .tl-head span{padding:6px 12px}
+  .tl-head span:last-child{text-align:right}
+  .timeline li{
+    display:grid;grid-template-columns:82px 1fr 96px;
+    border-bottom:1px solid var(--line);
+  }
+  .timeline li:last-child{border-bottom:none}
+  .timeline .t{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+    padding:11px 8px 11px 12px;background:var(--chalk);
+    border-right:1px solid var(--line);
+    display:flex;align-items:flex-start;
+  }
+  .timeline .e{padding:11px 14px;font-size:14.5px}
+  .timeline .e small{display:block;color:#5B6A61;font-size:13px;margin-top:1px}
+  .timeline .who{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+    letter-spacing:.04em;color:#4A5A50;text-align:right;
+    padding:13px 12px 11px 6px;border-left:1px dashed var(--line);
+  }
+  .timeline li.anchor .t{background:var(--fairway);color:var(--chalk)}
+  .timeline li.anchor .e{font-weight:640}
+  .timeline li.hot .t{background:var(--sunset);color:#fff}
+  .timeline li.hot .e{font-weight:640}
+  .timeline li.loose .t{color:#8A6A1F;background:var(--sand)}
+  .slots{
+    display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;
+    font-size:12px;color:#8A6A1F;letter-spacing:.02em;
+  }
+  .slots .tbd{color:#B9AE93}
+  @media(max-width:480px){
+    .tl-head, .timeline li{grid-template-columns:70px 1fr 74px}
+    .timeline .t{font-size:11.5px;padding-left:9px}
+    .timeline .who{font-size:9.5px;padding-right:9px}
+  }
+
+  .conf{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;
+    background:var(--sand);border-radius:3px;padding:1px 7px;font-size:12.5px;font-weight:600;
+  }
+  .note{
+    margin-top:12px;background:var(--chalk);border:1px dashed var(--brass);
+    border-radius:4px;padding:10px 12px;font-size:13.5px;
+  }
+  .note strong{color:#8A6A1F}
+  .facts{
+    margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:4px;
+    padding:12px 14px;font-size:13.5px;
+  }
+  .facts b{font-variation-settings:"wdth" 106}
+
+  /* ---------- Map ---------- */
+  .map-wrap{
+    background:#fff;border:1px solid var(--line);border-radius:4px;margin-top:14px;
+    padding:8px;
+  }
+  .map-wrap svg{display:block;width:100%;height:auto}
+  .map-wrap a{cursor:pointer}
+  .map-wrap a:focus-visible circle{stroke:var(--ink);stroke-width:3}
+  .legend{
+    display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;
+  }
+  .legend span{display:flex;align-items:center;gap:6px}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+
+  /* ---------- Money + open items ---------- */
+  .split{display:grid;gap:14px;margin-top:16px}
+  @media(min-width:640px){.split{grid-template-columns:1fr 1fr}}
+  .card{
+    background:#fff;border:1px solid var(--line);border-left:5px solid var(--fairway);
+    border-radius:4px;padding:18px 18px 16px;
+  }
+  .card.sunset{border-left-color:var(--sunset)}
+  .card h3{font-size:17px;font-weight:740;font-variation-settings:"wdth" 106;margin-bottom:8px}
+  table.money{width:100%;border-collapse:collapse;font-size:14px}
+  table.money td{padding:7px 4px;border-bottom:1px solid var(--line)}
+  table.money td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600}
+  .todo{list-style:none}
+  .todo li{position:relative;padding:8px 0 8px 30px;border-bottom:1px solid var(--line);font-size:14px}
+  .todo li::before{
+    content:"";position:absolute;left:2px;top:12px;width:14px;height:14px;
+    border:2px solid var(--sunset);border-radius:3px;
+  }
+  .splitwise{
+    display:block;text-align:center;margin-top:12px;
+    background:var(--fairway);color:var(--chalk);text-decoration:none;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.1em;
+    padding:11px 14px;border-radius:4px;font-weight:600;
+  }
+  .splitwise:hover,.splitwise:focus-visible{background:var(--pine);outline:none}
+
+  /* ---------- Josh Open ---------- */
+  .josh-card{
+    background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:14px;
+  }
+  .josh-banner{
+    background:linear-gradient(120deg, var(--spruce), var(--pine));
+    color:var(--chalk);padding:14px 16px;
+    display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;
+  }
+  .josh-banner b{
+    font-variation-settings:"wdth" 114;font-weight:840;text-transform:uppercase;
+    font-size:18px;letter-spacing:.02em;
+  }
+  .josh-banner span{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--brass);
+  }
+  table.board{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.board th{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;background:var(--sand);color:var(--ink);
+    padding:8px 6px;text-align:center;border-bottom:1px solid var(--line);
+  }
+  table.board th:first-child{text-align:left;padding-left:10px}
+  table.board td{
+    padding:9px 6px;border-bottom:1px solid var(--line);text-align:center;
+  }
+  table.board td:first-child{text-align:left;padding-left:10px}
+  table.board td .ev{font-weight:640}
+  table.board td small{display:block;color:#5B6A61;font-size:11.5px;font-weight:400}
+  .score{
+    display:inline-block;min-width:44px;border-bottom:2px dashed var(--brass);
+    font-family:'IBM Plex Mono',monospace;font-weight:600;color:#8A6A1F;font-size:14px;
+  }
+  table.board tr.total td{
+    background:var(--chalk);font-weight:740;border-top:2px solid var(--ink);
+  }
+  .totval{
+    font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:var(--ink);
+    min-width:52px;display:inline-block;border-bottom:2px solid var(--sunset);
+  }
+  .josh-rules{padding:12px 16px 14px;font-size:13.5px;border-top:1px solid var(--line)}
+  .josh-rules ul{list-style:none;margin-top:6px}
+  .josh-rules li{padding:5px 0 5px 22px;position:relative}
+  .josh-rules li::before{
+    content:"›";position:absolute;left:4px;color:var(--sunset);font-weight:800;
+  }
+  .feed{border-top:1px solid var(--line)}
+  .feed-head{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+    background:var(--spruce);color:var(--brass);padding:8px 16px;
+  }
+  .feed ul{list-style:none}
+  .feed li{
+    padding:9px 16px;border-bottom:1px solid var(--line);font-size:13.5px;
+  }
+  .feed li:last-child{border-bottom:none}
+  .feed .fts{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
+    color:#fff;background:var(--brass);border-radius:3px;padding:1px 6px;
+    margin-right:8px;vertical-align:1px;
+  }
+  .feed li.ex{color:#6B7A70;font-style:italic}
+  .feed li.open .fts{background:var(--sunset)}
+
+  footer{
+    text-align:center;padding:26px 20px 40px;font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;color:#6B7A70;letter-spacing:.06em;
+  }
+  @media print{
+    .daybar{display:none}
+    header{background:var(--spruce)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .timeline li,.card{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="bgfix" aria-hidden="true"></div>
+
+<header>
+  <p class="eyebrow">Labor Day Weekend · Sep 3–7, 2026</p>
+  <h1>Ian's Last<br>Round <span class="accent">of Freedom</span></h1>
+  <p class="hero-sub">Four days in Colorado: 36 holes, go-karts, a sunset boat, one night in Boulder, and a Denver send-off. Times, addresses, and confirmation codes all live on this page. Tee sheets and the Josh Open board are maintained by the commissioner's office — send Deven your names and scores.</p>
+  <div class="hero-facts">
+    <span class="fact">BASE&nbsp;CAMP: Westminster, CO</span>
+    <span class="fact">CREW: 11</span>
+    <span class="fact">MOTTO: EARLY TEES, LATE NIGHTS</span>
+  </div>
+</header>
+
+<div class="daybar" aria-hidden="true">
+  <span>THU 3</span><span>FRI 4</span><span>SAT 5</span><span>SUN 6</span><span>MON 7</span>
+</div>
+
+<main>
+
+<!-- JOSH OPEN -->
+<section class="day" id="josh">
+  <div class="day-head">
+    <span class="day-date">Championship</span>
+    <span class="day-title">The Josh Open</span>
+  </div>
+  <div class="josh-card">
+    <div class="josh-banner">
+      <b>Three Joshes. One Name Worth Having.</b>
+      <span>15 PTS · 5 EVENTS · PEOPLE'S VOTE ALWAYS OPEN</span>
+    </div>
+    <div class="feed">
+      <div class="feed-head">THE PEOPLE'S JOSH — LIVE FEED</div>
+      <ul>
+        <li class="ex"><span class="fts">EXAMPLE</span> Ian grants Josh R. 20 points for blinking the penjamin before attempting to drive the green.</li>
+        <li class="open"><span class="fts">—</span> Feed opens Thursday night. Votes to the commissioner; entries posted here as they land.</li>
+      </ul>
+    </div>
+    <table class="board">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Josh</th>
+          <th>Better Josh</th>
+          <th>Best Josh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ev">36-Hole Gross</span><small>Fri Fossil Trace + Sun Colorado National, combined strokes · low total wins</small></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+        </tr>
+        <tr>
+          <td><span class="ev">Fastest Lap</span><small>Sat · K1 Speed · single best lap of the day, any heat</small></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+        </tr>
+        <tr>
+          <td><span class="ev">Biggest Fish</span><small>Sat · Cherry Creek · longest catch · fallback: first fish → boat-energy vote</small></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+        </tr>
+        <tr>
+          <td><span class="ev">Ticket Haul</span><small>Sun · D&amp;B · most tickets from a fixed $25 card · receipts or it didn't happen</small></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+        </tr>
+        <tr>
+          <td><span class="ev">The People's Josh</span><small>Ongoing all weekend · non-Joshes cast + re-cast votes with the commissioner anytime · normalized to 3/2/1 when polls close Mon noon</small></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+          <td><span class="score">–</span></td>
+        </tr>
+        <tr class="total">
+          <td>TOTAL</td>
+          <td><span class="totval">0</span></td>
+          <td><span class="totval">0</span></td>
+          <td><span class="totval">0</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="josh-rules">
+      <b>Rules of engagement</b>
+      <ul>
+        <li>Every event scores <strong>3 / 2 / 1</strong> — nobody leaves an event with zero, everybody leaves an event behind somebody.</li>
+        <li>Golf is <strong>one event</strong>: both rounds, gross strokes, summed. Best Josh's whole reputation is worth exactly 20% of the pot. Prove it elsewhere.</li>
+        <li>Fishing fallback chain: biggest fish → first fish → boat-energy vote by the group. The walleye owe no Josh anything.</li>
+        <li>The People's Josh is a <strong>rolling vote</strong>: any non-Josh can cast — or change — their vote with the commissioner at any point in the weekend. A great send earns votes; a bad Saturday loses them. Raw votes are normalized to 3/2/1 when polls close at Monday noon, so no Josh is safe at any hour.</li>
+        <li><strong>Tiebreaker:</strong> head-to-head pop-a-shot at Dave &amp; Buster's, Sunday night. Winner take the tie.</li>
+        <li><strong>Awards ceremony:</strong> Monday, 12:00 PM sharp at the RiNo rally point — before anyone leaves for flights. Standings are final when read aloud.</li>
+        <li><strong>Stakes:</strong> final standings re-rank the names until Ian's wedding. Winner is Best Josh. Second is Better Josh. Third is simply Josh. The board does not negotiate.</li>
+        <li><strong>Board admin:</strong> results and People's Josh votes go to Deven, and only the commissioner's office updates this page. Running vote counts may be teased or withheld at the commissioner's discretion. No self-reporting, no revisionism.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- THURSDAY -->
+<section class="day" id="thu">
+  <div class="day-head">
+    <span class="day-date">Thu · Sep 3</span>
+    <span class="day-title">Wheels Down</span>
+  </div>
+  <ul class="timeline">
+    <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
+    <li class="anchor"><span class="t">4:00 PM</span><span class="e">House opens — self check-in, smart lock<small>Artist Getaway · 6745 W 97th Pl, Westminster · conf <span class="conf">HM38TXM2BK</span></small></span><span class="who">ROLLING</span></li>
+    <li><span class="t">EVENING</span><span class="e">Crew trickles in — drop flight times in the group chat for airport pooling<small>House is ~35 min from DEN</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">10:08 PM</span><span class="e">Deven lands — UA2436 from SFO · <span class="conf">K45V4D</span><small>Enterprise SUV pickup at DEN (conf <span class="conf">2115332183</span>, counter open 24h)</small></span><span class="who">DEVEN</span></li>
+    <li><span class="t">11:00 PM</span><span class="e">Last wave at the house — beers, room draft, Friday briefing<small>Reminder: 6 AM alarm is real. Hydrate.</small></span><span class="who">EVERYONE</span></li>
+  </ul>
+  <div class="facts"><b>House rules:</b> no pets, no parties/events on premises · sleeps up to 12 · host Kyle Andrew via Airbnb app · Airbnb support 1-833-928-6642</div>
+</section>
+
+<!-- FRIDAY -->
+<section class="day" id="fri">
+  <div class="day-head">
+    <span class="day-date">Fri · Sep 4</span>
+    <span class="day-title">Fossil Trace → Boulder</span>
+  </div>
+  <ul class="timeline">
+    <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
+    <li><span class="t">6:00 AM</span><span class="e">Wake up — Fossil Trace day, whole house rolls<small>Coffee, bananas, no dawdling — that means the riders too</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">6:40 AM</span><span class="e">Depart for Golden — 3 cars<small>~25 min · 3050 Illinois St, Golden · 8 playing, non-golfers riding along — carts, heckling, and beers count as participation</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">7:05 AM</span><span class="e">Check in at the Fossil Trace golf shop, warm up<small>Pay at the shop · carts path-only (drought) · shop (303) 277-8750</small></span><span class="who">GOLF ×8</span></li>
+    <li class="anchor"><span class="t">7:30 AM</span><span class="e">Tee group 1 · <span class="conf">430884</span><span class="slots">1) Ian &nbsp;2) Atharva &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">2 OF 4</span></li>
+    <li class="anchor"><span class="t">7:40 AM</span><span class="e">Tee group 2 · <span class="conf">430883</span><span class="slots">1) Deven &nbsp;2) <span class="tbd">TBD</span> &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">1 OF 4</span></li>
+    <li><span class="t">12:45 PM</span><span class="e">Rounds wrap — lunch + a beer in Golden, full crew<small>Scorecards audited, Josh golf standings noted by the commissioner</small></span><span class="who">EVERYONE</span></li>
+    <li class="loose"><span class="t">2:00 PM</span><span class="e">Grocery run — ~1 hour holding slot<small>Weekend provisions: breakfasts, cooler stock, snacks · rest of the crew heads to the house</small></span><span class="who">DEVEN +VOLS</span></li>
+    <li><span class="t">3:00 PM</span><span class="e">Back at the house — unload, pool, nap, shower window<small>You will want the nap</small></span><span class="who">EVERYONE</span></li>
+    <li class="hot"><span class="t">5:00 PM</span><span class="e">Depart for Boulder<small>~30 min · anchor point: Pearl Street Mall, 1303 Pearl St</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">5:45 PM</span><span class="e">Pearl Street — patio drinks, then dinner<small>Dinner spot TBD — book a table for 11 or split into squads</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">LATE</span><span class="e">Boulder bar crawl → designated drivers or rideshares home<small>Two DDs minimum, or budget ~$40/car each way in rideshares</small></span><span class="who">EVERYONE</span></li>
+  </ul>
+  <p class="note"><strong>Fossil Trace fine print:</strong> nothing is charged until check-in; cancel any unused spots at least <strong>20 hours ahead</strong> or the card on file eats a no-show fee.</p>
+</section>
+
+<!-- SATURDAY -->
+<section class="day" id="sat">
+  <div class="day-head">
+    <span class="day-date">Sat · Sep 5</span>
+    <span class="day-title">Karts → Sunset Boat</span>
+  </div>
+  <ul class="timeline">
+    <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
+    <li class="loose"><span class="t">MORNING</span><span class="e">Nothing. On purpose.<small>Sleep in, recover from Boulder, greasy breakfast at the house</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">12:30 PM</span><span class="e">Depart for K1 Speed Thornton<small>~20 min · 16059 Grant St, Thornton · pack swim bags + cooler in the cars first, in case we run straight to the dock</small></span><span class="who">EVERYONE</span></li>
+    <li class="anchor"><span class="t">1:00 PM</span><span class="e">K1 Speed — go-kart racing ⚠ pending confirmation<small>Grand prix format for 11 = automatic bragging rights table</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">3:00 PM</span><span class="e">Racing wraps — straight back, quick change for the water<small>Swim trunks + towel if you're getting in · BYOB cooler, no glass</small></span><span class="who">EVERYONE</span></li>
+    <li class="anchor"><span class="t">4:00 PM</span><span class="e">Depart for Cherry Creek — hard deadline, carpool tight<small>~40–45 min · Cherry Creek State Park west boat ramp, enter off S. Dayton St · park entry fee per car</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">4:45 PM</span><span class="e">Meet the crew at the walking path overlooking the water<small>West boat ramp just south of the marina — park west of the marina, walk south</small></span><span class="who">EVERYONE</span></li>
+    <li class="hot"><span class="t">5:00 PM</span><span class="e">Denver Charter Fishing — private sunset cruise<small>4 hours · targeting walleye, plus trout &amp; carp if they show · swimming OK (life jackets) · drinks OK, no glass</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">9:00 PM</span><span class="e">Back at the dock — late dinner on the drive home<small>Captain: Ilan Reissner · 303-358-5941</small></span><span class="who">EVERYONE</span></li>
+  </ul>
+  <p class="note"><strong>Licenses:</strong> anyone actually fishing needs a Colorado fishing license — buy ahead at cpwshop.com, takes 5 minutes. Ilan provides all gear. Bring: sunglasses, sunscreen, layers, snacks, bug spray. Carpool hard — dock parking is limited on weekends and every car pays park entry.</p>
+</section>
+
+<!-- SUNDAY -->
+<section class="day" id="sun">
+  <div class="day-head">
+    <span class="day-date">Sun · Sep 6</span>
+    <span class="day-title">Colorado National → D&amp;B</span>
+  </div>
+  <ul class="timeline">
+    <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
+    <li><span class="t">7:45 AM</span><span class="e">Wake up — full squad plays today<small>Proper breakfast at the house</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">8:25 AM</span><span class="e">Depart for Erie — 3 cars<small>~25 min · 2700 Vista Pkwy, Erie</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">8:54 AM</span><span class="e">Arrive Colorado National — 1 hour before first tee<small>Check in, range balls, putting green, breakfast sandwich · $123/player due at the course · (303) 926-1723</small></span><span class="who">EVERYONE</span></li>
+    <li class="anchor"><span class="t">9:54 AM</span><span class="e">Tee group 1 · <span class="conf">426944088</span><span class="slots">1) <span class="tbd">TBD</span> &nbsp;2) <span class="tbd">TBD</span> &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">4 SLOTS</span></li>
+    <li class="anchor"><span class="t">10:03 AM</span><span class="e">Tee group 2 · <span class="conf">426944095</span><span class="slots">1) <span class="tbd">TBD</span> &nbsp;2) <span class="tbd">TBD</span> &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">4 SLOTS</span></li>
+    <li class="anchor"><span class="t">10:12 AM</span><span class="e">Tee group 3 · <span class="conf">426944106</span><span class="slots">1) <span class="tbd">TBD</span> &nbsp;2) <span class="tbd">TBD</span> &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">FLEX</span></span><small>3 booked + a flex 4th just in case — bump the reservation if claimed</small></span><span class="who">3 + FLEX</span></li>
+    <li><span class="t">3:00 PM</span><span class="e">Rounds wrap — clubhouse beer, settle the money games<small>Front Range views, take the photos here</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">4:00 PM</span><span class="e">Back at the house — shower, regroup</span><span class="who">EVERYONE</span></li>
+    <li class="hot"><span class="t">6:00 PM</span><span class="e">Dave &amp; Buster's Westminster — dinner, games, last-night sends<small>5 min from the house · 10667 Westminster Blvd · open till midnight · Josh Open tiebreaker venue</small></span><span class="who">EVERYONE</span></li>
+  </ul>
+</section>
+
+<!-- MONDAY -->
+<section class="day" id="mon">
+  <div class="day-head">
+    <span class="day-date">Mon · Sep 7</span>
+    <span class="day-title">Denver Send-Off</span>
+  </div>
+  <ul class="timeline">
+    <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
+    <li><span class="t">8:30 AM</span><span class="e">Wake, pack, sweep the house<small>Trash out, dishes run, keys in the lockbox</small></span><span class="who">EVERYONE</span></li>
+    <li class="anchor"><span class="t">10:00 AM</span><span class="e">Checkout — hard deadline<small>Convoy heads into Denver proper (~25 min)</small></span><span class="who">EVERYONE</span></li>
+    <li class="loose"><span class="t">10:30 AM</span><span class="e">Denver day — open format, no schedule<small>Ideas: RiNo food trucks + breweries (Ratio opens noon, Odell at 2 — River North closed Mondays) · Larimer Square wander · Union Station bars · pool hall if Deven finds a table</small></span><span class="who">EVERYONE</span></li>
+    <li class="hot"><span class="t">12:00 PM</span><span class="e">The Josh Open Awards Ceremony — RiNo rally point<small>People's Josh polls close + votes normalized · final tally read aloud · renaming ritual performed · new Best Josh crowned, new Josh consoled · toast to Ian, who made all this possible — before anyone peels off for flights</small></span><span class="who">EVERYONE</span></li>
+    <li class="loose"><span class="t">12:30 PM</span><span class="e">Lunch + last rounds together — RiNo food trucks &amp; breweries<small>Scatter as flights require from here</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">5:45 PM</span><span class="e">Roll to DEN — drop-offs staggered by flight time</span><span class="who">EVERYONE</span></li>
+    <li><span class="t">7:00 PM</span><span class="e">Enterprise SUV returned<small>24h return lanes — keys on the dash</small></span><span class="who">DEVEN +CAR</span></li>
+    <li><span class="t">9:09 PM</span><span class="e">Deven departs — UA2123 to SFO, lands 10:55 PM<small>Everyone else: safe travels, hydrate, text the chat when you land</small></span><span class="who">DEVEN</span></li>
+  </ul>
+</section>
+
+<!-- MAP -->
+<section class="day" id="mapsec">
+  <div class="day-head">
+    <span class="day-date">Reference</span>
+    <span class="day-title">The Map</span>
+  </div>
+  <div class="map-wrap" id="mapwrap" role="img" aria-label="Schematic map of all trip locations across the Denver metro area. Tap any pin to open it in Google Maps."></div>
+  <div class="legend">
+    <span><span class="dot" style="background:#C2A25B"></span>BASE / TRAVEL</span>
+    <span><span class="dot" style="background:#2E5C41"></span>GOLF</span>
+    <span><span class="dot" style="background:#E8722C"></span>NIGHTS OUT</span>
+    <span><span class="dot" style="background:#4A76A8"></span>MONDAY DENVER</span>
+  </div>
+  <p class="note">Tap any pin to open it in Google Maps for live directions. Cherry Creek is the far-flung one — southeast across the metro, ~40–45 min from the house. Everything else sits within 30 minutes of base camp.</p>
+</section>
+
+<!-- LOGISTICS -->
+<section class="day" id="logistics">
+  <div class="day-head">
+    <span class="day-date">Reference</span>
+    <span class="day-title">Money &amp; Open Items</span>
+  </div>
+  <div class="split">
+    <div class="card">
+      <h3>The Damage (group costs)</h3>
+      <table class="money">
+        <tr><td>Airbnb · 4 nights</td><td>$3,851.21</td></tr>
+        <tr><td>SUV rental · Thu–Mon</td><td>$1,233.00</td></tr>
+        <tr><td>Colorado National · per golfer</td><td>$123.00</td></tr>
+        <tr><td>Fossil Trace · per golfer</td><td>at check-in</td></tr>
+        <tr><td>Groceries · Fri run</td><td>split</td></tr>
+        <tr><td>K1 Speed · per racer</td><td>~$70 est.</td></tr>
+        <tr><td>Food + drinks out · Boulder, D&amp;B, Denver</td><td>~$250–350/pp</td></tr>
+        <tr><td>Saturday's boat</td><td>on Deven 🎣</td></tr>
+        <tr><td><strong>Estimated all-in per person</strong> · excl. flights</td><td><strong>~$1,000–1,250</strong></td></tr>
+      </table>
+      <p class="note" style="margin-top:8px">Rough per-person math: Airbnb ~$350 + SUV ~$112 + Sunday golf $123 + Fossil Trace ~$120 (golfers) + K1 ~$70 + groceries + food/drinks out. Non-golfers Friday save ~$120.</p>
+      <a class="splitwise" href="https://www.splitwise.com/join/GpZ1QmJiGTT+jr48b?v=e" target="_blank" rel="noopener">JOIN THE TRIP SPLITWISE →</a>
+      <p class="note">All shared costs run through Splitwise — join above, settle at the end. Airbnb hits Deven's card <strong>Aug 21</strong>; it'll be in there.</p>
+    </div>
+    <div class="card sunset">
+      <h3>Before We Fly</h3>
+      <ul class="todo">
+        <li><strong>Waivers — every boat rider signs.</strong> Deven forwards the guest portal link, everyone completes pre-trip tasks before 9/5.</li>
+        <li><strong>Confirm K1 Speed</strong> for Sat 1:00 PM (Deven's on it — group races book up on holiday weekends).</li>
+        <li><strong>Fishing licenses</strong> for anyone wetting a line Saturday (buy ahead at cpwshop.com).</li>
+        <li><strong>Claim a tee slot</strong> — text Deven your day(s); the sheets here update as they fill. Cancel Fossil Trace extras ≥20h out.</li>
+        <li><strong>Brief the Joshes.</strong> Rules go out before the trip — no Josh may claim ignorance of the standings.</li>
+        <li><strong>Boulder dinner reservation</strong> for Friday — 11 covers, ~6:30 PM.</li>
+        <li><strong>Join the Splitwise + flight details to the group chat</strong> for airport carpools.</li>
+        <li>Airbnb free cancellation ends <strong>Aug 29, 4:00 PM</strong> (not that we're cancelling).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>ONE WEEKEND · TWO COURSES · THREE JOSHES · ONE BOAT · SEND IT FOR IAN</footer>
+
+<script>
+(function(){
+  // Self-contained SVG map: no external tiles or libraries, renders anywhere.
+  var COLORS = {base:'#C2A25B', golf:'#2E5C41', night:'#E8722C', denver:'#4A76A8'};
+  var pins = [
+    {name:'Base Camp', sub:'6745 W 97th Pl, Westminster', lat:39.8749206, lng:-105.0726252, cat:'base', dx:12, dy:14, anchor:'start'},
+    {name:'DEN Airport', sub:'Arrivals Thu · departures Mon', lat:39.8561, lng:-104.6737, cat:'base', dx:-12, dy:4, anchor:'end'},
+    {name:'Fossil Trace GC', sub:'Fri 7:30 / 7:40 AM', lat:39.7374778, lng:-105.2116889, cat:'golf', dx:12, dy:4, anchor:'start'},
+    {name:'Colorado National GC', sub:'Sun 9:54 / 10:03 / 10:12 AM', lat:40.0053537, lng:-105.0260174, cat:'golf', dx:12, dy:4, anchor:'start'},
+    {name:'Pearl St, Boulder', sub:'Fri night', lat:40.0183510, lng:-105.2786591, cat:'night', dx:12, dy:4, anchor:'start'},
+    {name:'K1 Speed Thornton', sub:'Sat 1:00 PM', lat:39.9877937, lng:-104.9839303, cat:'night', dx:12, dy:12, anchor:'start'},
+    {name:"Dave & Buster's", sub:'Sun 6:00 PM', lat:39.8902934, lng:-105.0705643, cat:'night', dx:-12, dy:-6, anchor:'end'},
+    {name:'Cherry Creek Boat Ramp', sub:'Sat 4:45 PM meet', lat:39.6380352, lng:-104.8712326, cat:'night', dx:12, dy:-4, anchor:'start'},
+    {name:'RiNo · Rally + Awards', sub:'Mon · Josh ceremony at noon, then breweries + food trucks', lat:39.7619, lng:-104.9811, cat:'denver', dx:12, dy:-2, anchor:'start'}
+  ];
+  var W=760, H=560, PAD=46;
+  var latMin=39.60, latMax=40.06, lngMin=-105.34, lngMax=-104.61;
+  function X(lng){ return PAD + (lng-lngMin)/(lngMax-lngMin)*(W-2*PAD); }
+  function Y(lat){ return PAD + (latMax-lat)/(latMax-latMin)*(H-2*PAD); }
+  var s = [];
+  s.push('<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" font-family=\'IBM Plex Mono\',monospace>');
+  s.push('<rect width="'+W+'" height="'+H+'" fill="#F4F1E7"/>');
+  for(var gx=PAD; gx<=W-PAD; gx+=(W-2*PAD)/6){
+    s.push('<line x1="'+gx+'" y1="'+PAD+'" x2="'+gx+'" y2="'+(H-PAD)+'" stroke="rgba(23,37,30,.06)" stroke-width="1"/>');
+  }
+  for(var gy=PAD; gy<=H-PAD; gy+=(H-2*PAD)/6){
+    s.push('<line x1="'+PAD+'" y1="'+gy+'" x2="'+(W-PAD)+'" y2="'+gy+'" stroke="rgba(23,37,30,.06)" stroke-width="1"/>');
+  }
+  var mts='';
+  for(var i=0;i<9;i++){
+    var bx=6+i*4, by=70+i*54, h2=26+((i*7)%18);
+    mts+='M'+bx+','+(by+h2)+' l14,-'+h2+' l14,'+h2+' ';
+  }
+  s.push('<path d="'+mts+'" fill="none" stroke="rgba(46,92,65,.35)" stroke-width="2" stroke-linejoin="round"/>');
+  s.push('<text x="14" y="'+(H-16)+'" font-size="10" letter-spacing="3" fill="rgba(46,92,65,.55)" transform="rotate(-90 14 '+(H-16)+')">FRONT RANGE</text>');
+  s.push('<text x="'+(W-30)+'" y="34" font-size="13" font-weight="600" text-anchor="middle" fill="#17251E">N</text>');
+  s.push('<path d="M'+(W-30)+',40 l5,14 l-5,-4 l-5,4 z" fill="#17251E"/>');
+  s.push('<text x="'+PAD+'" y="26" font-size="11" letter-spacing="2.5" fill="#6B7A70">DENVER METRO · SCHEMATIC — TAP A PIN FOR DIRECTIONS</text>');
+  var hx=X(-105.0726252), hy=Y(39.8749206);
+  s.push('<circle cx="'+hx+'" cy="'+hy+'" r="17" fill="none" stroke="rgba(194,162,91,.5)" stroke-width="1.5" stroke-dasharray="3 3"/>');
+  pins.forEach(function(p){
+    var x=X(p.lng), y=Y(p.lat);
+    var url='https://maps.google.com/maps?q='+p.lat+','+p.lng;
+    s.push('<a href="'+url+'" target="_blank" rel="noopener">');
+    s.push('<title>'+p.name+' — '+p.sub+'</title>');
+    s.push('<circle cx="'+x+'" cy="'+y+'" r="8" fill="'+COLORS[p.cat]+'" stroke="#fff" stroke-width="2.5"/>');
+    s.push('<text x="'+(x+p.dx)+'" y="'+(y+p.dy)+'" font-size="11.5" font-weight="600" text-anchor="'+p.anchor+'" fill="#17251E">'+p.name+'</text>');
+    s.push('<text x="'+(x+p.dx)+'" y="'+(y+p.dy+12)+'" font-size="9.5" text-anchor="'+p.anchor+'" fill="#6B7A70">'+p.sub+'</text>');
+    s.push('</a>');
+  });
+  s.push('</svg>');
+  document.getElementById('mapwrap').innerHTML = s.join('');
+})();
+</script>
+
+</body>
+</html>
