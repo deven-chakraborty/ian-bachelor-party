@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   :root{
     color-scheme:light only;
@@ -174,9 +175,10 @@
     background:#fff;border:1px solid var(--line);border-radius:4px;margin-top:14px;
     padding:8px;
   }
-  .map-wrap svg{display:block;width:100%;height:auto}
-  .map-wrap a{cursor:pointer}
-  .map-wrap a:focus-visible circle{stroke:var(--ink);stroke-width:3}
+  #map{height:460px;border-radius:3px;z-index:1}
+  .leaflet-popup-content{font-family:'Archivo',sans-serif;font-size:13.5px;line-height:1.45}
+  .leaflet-popup-content b{font-variation-settings:"wdth" 106}
+  .leaflet-popup-content a{color:var(--fairway);font-weight:600}
   .legend{
     display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;
     font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;
@@ -413,7 +415,7 @@
   <ul class="timeline">
     <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
     <li><span class="t">6:00 AM</span><span class="e">Wake up — Fossil Trace day, whole house rolls<small>Coffee, bananas, no dawdling — that means the riders too</small></span><span class="who">EVERYONE</span></li>
-    <li><span class="t">6:40 AM</span><span class="e">Depart for Golden — 3 cars<small>~25 min · 3050 Illinois St, Golden · 8 playing, non-golfers riding along — carts, heckling, and beers count as participation</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">6:40 AM</span><span class="e">Depart for Golden — 3 cars<small>~25 min · 3050 Illinois St, Golden · 8 playing ($175), non-golfers riding along ($50) — carts, heckling, and beers count as participation</small></span><span class="who">EVERYONE</span></li>
     <li><span class="t">7:05 AM</span><span class="e">Check in at the Fossil Trace golf shop, warm up<small>Pay at the shop · carts path-only (drought) · shop (303) 277-8750</small></span><span class="who">GOLF ×8</span></li>
     <li class="anchor"><span class="t">7:30 AM</span><span class="e">Tee group 1 · <span class="conf">430884</span><span class="slots">1) Ian &nbsp;2) Atharva &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">2 OF 4</span></li>
     <li class="anchor"><span class="t">7:40 AM</span><span class="e">Tee group 2 · <span class="conf">430883</span><span class="slots">1) Deven &nbsp;2) <span class="tbd">TBD</span> &nbsp;3) <span class="tbd">TBD</span> &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">1 OF 4</span></li>
@@ -492,7 +494,7 @@
     <span class="day-date">Reference</span>
     <span class="day-title">The Map</span>
   </div>
-  <div class="map-wrap" id="mapwrap" role="img" aria-label="Schematic map of all trip locations across the Denver metro area. Tap any pin to open it in Google Maps."></div>
+  <div class="map-wrap"><div id="map" role="application" aria-label="Interactive street map of all trip locations across the Denver metro area. Tap any pin for details and directions."></div></div>
   <div class="legend">
     <span><span class="dot" style="background:#C2A25B"></span>BASE / TRAVEL</span>
     <span><span class="dot" style="background:#2E5C41"></span>GOLF</span>
@@ -515,14 +517,14 @@
         <tr><td>Airbnb · 4 nights</td><td>$3,851.21</td></tr>
         <tr><td>SUV rental · Thu–Mon</td><td>$1,233.00</td></tr>
         <tr><td>Colorado National · per golfer</td><td>$123.00</td></tr>
-        <tr><td>Fossil Trace · per golfer</td><td>at check-in</td></tr>
+        <tr><td>Fossil Trace · per golfer / per rider</td><td>$175 / $50</td></tr>
         <tr><td>Groceries · Fri run</td><td>split</td></tr>
-        <tr><td>K1 Speed · per racer</td><td>~$70 est.</td></tr>
+        <tr><td>K1 Speed · per racer</td><td>$80</td></tr>
         <tr><td>Food + drinks out · Boulder, D&amp;B, Denver</td><td>~$250–350/pp</td></tr>
         <tr><td>Saturday's boat</td><td>on Deven 🎣</td></tr>
-        <tr><td><strong>Estimated all-in per person</strong> · excl. flights</td><td><strong>~$1,000–1,250</strong></td></tr>
+        <tr><td><strong>Estimated all-in per person</strong> · excl. flights</td><td><strong>~$1,100–1,350</strong></td></tr>
       </table>
-      <p class="note" style="margin-top:8px">Rough per-person math: Airbnb ~$350 + SUV ~$112 + Sunday golf $123 + Fossil Trace ~$120 (golfers) + K1 ~$70 + groceries + food/drinks out. Non-golfers Friday save ~$120.</p>
+      <p class="note" style="margin-top:8px">Rough per-person math: Airbnb ~$350 + SUV ~$112 + Sunday golf $123 + Fossil Trace $175 (golfers; riders $50) + K1 $80 + groceries + food/drinks out. Friday riders save $125 vs. playing.</p>
       <a class="splitwise" href="https://www.splitwise.com/join/GpZ1QmJiGTT+jr48b?v=e" target="_blank" rel="noopener">JOIN THE TRIP SPLITWISE →</a>
       <p class="note">All shared costs run through Splitwise — join above, settle at the end. Airbnb hits Deven's card <strong>Aug 21</strong>; it'll be in there.</p>
     </div>
@@ -546,58 +548,38 @@
 
 <footer>ONE WEEKEND · TWO COURSES · THREE JOSHES · ONE BOAT · SEND IT FOR IAN</footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function(){
-  // Self-contained SVG map: no external tiles or libraries, renders anywhere.
   var COLORS = {base:'#C2A25B', golf:'#2E5C41', night:'#E8722C', denver:'#4A76A8'};
   var pins = [
-    {name:'Base Camp', sub:'6745 W 97th Pl, Westminster', lat:39.8749206, lng:-105.0726252, cat:'base', dx:12, dy:14, anchor:'start'},
-    {name:'DEN Airport', sub:'Arrivals Thu · departures Mon', lat:39.8561, lng:-104.6737, cat:'base', dx:-12, dy:4, anchor:'end'},
-    {name:'Fossil Trace GC', sub:'Fri 7:30 / 7:40 AM', lat:39.7374778, lng:-105.2116889, cat:'golf', dx:12, dy:4, anchor:'start'},
-    {name:'Colorado National GC', sub:'Sun 9:54 / 10:03 / 10:12 AM', lat:40.0053537, lng:-105.0260174, cat:'golf', dx:12, dy:4, anchor:'start'},
-    {name:'Pearl St, Boulder', sub:'Fri night', lat:40.0183510, lng:-105.2786591, cat:'night', dx:12, dy:4, anchor:'start'},
-    {name:'K1 Speed Thornton', sub:'Sat 1:00 PM', lat:39.9877937, lng:-104.9839303, cat:'night', dx:12, dy:12, anchor:'start'},
-    {name:"Dave & Buster's", sub:'Sun 6:00 PM', lat:39.8902934, lng:-105.0705643, cat:'night', dx:-12, dy:-6, anchor:'end'},
-    {name:'Cherry Creek Boat Ramp', sub:'Sat 4:45 PM meet', lat:39.6380352, lng:-104.8712326, cat:'night', dx:12, dy:-4, anchor:'start'},
-    {name:'RiNo · Rally + Awards', sub:'Mon · Josh ceremony at noon, then breweries + food trucks', lat:39.7619, lng:-104.9811, cat:'denver', dx:12, dy:-2, anchor:'start'}
+    {name:'Base Camp', sub:'6745 W 97th Pl, Westminster · Thu\u2013Mon', lat:39.8749206, lng:-105.0726252, cat:'base'},
+    {name:'DEN Airport', sub:'Arrivals Thu · departures Mon', lat:39.8561, lng:-104.6737, cat:'base'},
+    {name:'Fossil Trace GC', sub:'Fri 7:30 / 7:40 AM · Golden', lat:39.7374778, lng:-105.2116889, cat:'golf'},
+    {name:'Colorado National GC', sub:'Sun 9:54 / 10:03 / 10:12 AM · Erie', lat:40.0053537, lng:-105.0260174, cat:'golf'},
+    {name:'Pearl St, Boulder', sub:'Fri night · depart house 5:00 PM', lat:40.0183510, lng:-105.2786591, cat:'night'},
+    {name:'K1 Speed Thornton', sub:'Sat 1:00 PM · 16059 Grant St', lat:39.9877937, lng:-104.9839303, cat:'night'},
+    {name:"Dave & Buster's Westminster", sub:'Sun 6:00 PM · 5 min from house', lat:39.8902934, lng:-105.0705643, cat:'night'},
+    {name:'Cherry Creek West Boat Ramp', sub:'Sat 4:45 PM meet · enter off S. Dayton St, park west of marina, walk south', lat:39.6380352, lng:-104.8712326, cat:'night'},
+    {name:'RiNo · Rally + Awards', sub:'Mon · Josh ceremony at noon, then breweries + food trucks', lat:39.7619, lng:-104.9811, cat:'denver'}
   ];
-  var W=760, H=560, PAD=46;
-  var latMin=39.60, latMax=40.06, lngMin=-105.34, lngMax=-104.61;
-  function X(lng){ return PAD + (lng-lngMin)/(lngMax-lngMin)*(W-2*PAD); }
-  function Y(lat){ return PAD + (latMax-lat)/(latMax-latMin)*(H-2*PAD); }
-  var s = [];
-  s.push('<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" font-family=\'IBM Plex Mono\',monospace>');
-  s.push('<rect width="'+W+'" height="'+H+'" fill="#F4F1E7"/>');
-  for(var gx=PAD; gx<=W-PAD; gx+=(W-2*PAD)/6){
-    s.push('<line x1="'+gx+'" y1="'+PAD+'" x2="'+gx+'" y2="'+(H-PAD)+'" stroke="rgba(23,37,30,.06)" stroke-width="1"/>');
-  }
-  for(var gy=PAD; gy<=H-PAD; gy+=(H-2*PAD)/6){
-    s.push('<line x1="'+PAD+'" y1="'+gy+'" x2="'+(W-PAD)+'" y2="'+gy+'" stroke="rgba(23,37,30,.06)" stroke-width="1"/>');
-  }
-  var mts='';
-  for(var i=0;i<9;i++){
-    var bx=6+i*4, by=70+i*54, h2=26+((i*7)%18);
-    mts+='M'+bx+','+(by+h2)+' l14,-'+h2+' l14,'+h2+' ';
-  }
-  s.push('<path d="'+mts+'" fill="none" stroke="rgba(46,92,65,.35)" stroke-width="2" stroke-linejoin="round"/>');
-  s.push('<text x="14" y="'+(H-16)+'" font-size="10" letter-spacing="3" fill="rgba(46,92,65,.55)" transform="rotate(-90 14 '+(H-16)+')">FRONT RANGE</text>');
-  s.push('<text x="'+(W-30)+'" y="34" font-size="13" font-weight="600" text-anchor="middle" fill="#17251E">N</text>');
-  s.push('<path d="M'+(W-30)+',40 l5,14 l-5,-4 l-5,4 z" fill="#17251E"/>');
-  s.push('<text x="'+PAD+'" y="26" font-size="11" letter-spacing="2.5" fill="#6B7A70">DENVER METRO · SCHEMATIC — TAP A PIN FOR DIRECTIONS</text>');
-  var hx=X(-105.0726252), hy=Y(39.8749206);
-  s.push('<circle cx="'+hx+'" cy="'+hy+'" r="17" fill="none" stroke="rgba(194,162,91,.5)" stroke-width="1.5" stroke-dasharray="3 3"/>');
+
+  var map = L.map('map', {scrollWheelZoom:false});
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var bounds = [];
   pins.forEach(function(p){
-    var x=X(p.lng), y=Y(p.lat);
-    var url='https://maps.google.com/maps?q='+p.lat+','+p.lng;
-    s.push('<a href="'+url+'" target="_blank" rel="noopener">');
-    s.push('<title>'+p.name+' — '+p.sub+'</title>');
-    s.push('<circle cx="'+x+'" cy="'+y+'" r="8" fill="'+COLORS[p.cat]+'" stroke="#fff" stroke-width="2.5"/>');
-    s.push('<text x="'+(x+p.dx)+'" y="'+(y+p.dy)+'" font-size="11.5" font-weight="600" text-anchor="'+p.anchor+'" fill="#17251E">'+p.name+'</text>');
-    s.push('<text x="'+(x+p.dx)+'" y="'+(y+p.dy+12)+'" font-size="9.5" text-anchor="'+p.anchor+'" fill="#6B7A70">'+p.sub+'</text>');
-    s.push('</a>');
+    var m = L.circleMarker([p.lat, p.lng], {
+      radius:9, color:'#ffffff', weight:2.5, fillColor:COLORS[p.cat], fillOpacity:1
+    }).addTo(map);
+    m.bindPopup('<b>' + p.name + '</b><br>' + p.sub +
+      '<br><a target="_blank" rel="noopener" href="https://maps.google.com/maps?q=' + p.lat + ',' + p.lng + '">Directions (Google Maps) \u2192</a>');
+    bounds.push([p.lat, p.lng]);
   });
-  s.push('</svg>');
-  document.getElementById('mapwrap').innerHTML = s.join('');
+  map.fitBounds(bounds, {padding:[30,30]});
 })();
 </script>
 
