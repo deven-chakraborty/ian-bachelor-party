@@ -299,6 +299,38 @@
   .feed li.ex{color:#6B7A70;font-style:italic}
   .feed li.open .fts{background:var(--sunset)}
 
+  /* ---------- Crew ---------- */
+  .bachelor-card{
+    background:#fff;border:1px solid var(--line);border-left:5px solid var(--sunset);
+    border-radius:4px;overflow:hidden;margin-bottom:14px;
+    display:grid;grid-template-columns:1fr;
+  }
+  @media(min-width:560px){.bachelor-card{grid-template-columns:280px 1fr}}
+  .bachelor-card img{width:100%;height:100%;object-fit:cover;display:block;max-height:340px}
+  .bachelor-info{padding:18px}
+  .bachelor-info .role{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+    color:var(--sunset);font-weight:600;
+  }
+  .bachelor-info h3{
+    font-variation-settings:"wdth" 112;font-weight:840;font-size:26px;
+    text-transform:uppercase;margin:4px 0 8px;
+  }
+  .bachelor-info p{font-size:14px;color:#4A5A50}
+  .crew-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;
+  }
+  .crew-card{
+    background:#fff;border:1px solid var(--line);border-radius:4px;padding:12px 14px;
+  }
+  .crew-card .nm{font-weight:740;font-variation-settings:"wdth" 106;font-size:15px}
+  .crew-card .rl{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+    letter-spacing:.1em;color:#6B7A70;margin-top:3px;text-transform:uppercase;
+  }
+  .crew-card.josh{border-left:4px solid var(--brass)}
+  .crew-card.staff{border-left:4px solid var(--fairway)}
+
   footer{
     text-align:center;padding:26px 20px 40px;font-family:'IBM Plex Mono',monospace;
     font-size:11.5px;color:#6B7A70;letter-spacing:.06em;
@@ -326,6 +358,7 @@
 
 <nav aria-label="Sections">
   <a href="#josh">JOSH</a>
+  <a href="#crew">CREW</a>
   <a href="#thu">THU 3</a>
   <a href="#fri">FRI 4</a>
   <a href="#sat">SAT 5</a>
@@ -410,6 +443,34 @@
   </div>
 </section>
 
+
+<!-- CREW -->
+<section class="day" id="crew">
+  <div class="day-head">
+    <span class="day-date">Roster</span>
+    <span class="day-title">The Crew</span>
+  </div>
+  <div class="bachelor-card">
+    <img src="ian.jpg" alt="Ian, the bachelor, in a green elf hat mid-celebration">
+    <div class="bachelor-info">
+      <span class="role">THE BACHELOR · GUEST OF HONOR</span>
+      <h3>Ian</h3>
+      <p>The man of the weekend, pictured in his natural habitat. Everything on this page exists because he found someone willing to marry him — an achievement we will spend four days celebrating and questioning in equal measure.</p>
+    </div>
+  </div>
+  <div class="crew-grid">
+    <div class="crew-card staff"><span class="nm">Deven</span><span class="rl">Commissioner · Best Man</span></div>
+    <div class="crew-card josh"><span class="nm">Josh S.</span><span class="rl">Contender · "Josh"</span></div>
+    <div class="crew-card josh"><span class="nm">Josh M.</span><span class="rl">Contender · "Better Josh"</span></div>
+    <div class="crew-card josh"><span class="nm">Josh R.</span><span class="rl">Contender · "Best Josh"</span></div>
+    <div class="crew-card"><span class="nm">Atharva</span><span class="rl">The Crew</span></div>
+    <div class="crew-card"><span class="nm">Shiv</span><span class="rl">The Crew</span></div>
+    <div class="crew-card"><span class="nm">Thomas</span><span class="rl">The Crew</span></div>
+    <div class="crew-card"><span class="nm">Hayden</span><span class="rl">The Crew</span></div>
+    <div class="crew-card"><span class="nm">David</span><span class="rl">The Crew</span></div>
+    <div class="crew-card"><span class="nm">John</span><span class="rl">The Crew</span></div>
+  </div>
+</section>
 
 <!-- THURSDAY -->
 <section class="day" id="thu">
