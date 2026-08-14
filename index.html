@@ -249,6 +249,21 @@
     display:inline-block;min-width:44px;border-bottom:2px dashed var(--brass);
     font-family:'IBM Plex Mono',monospace;font-weight:600;color:#8A6A1F;font-size:14px;
   }
+  .board-legend{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;
+    background:var(--sand);color:#5B6A61;padding:7px 16px;border-bottom:1px solid var(--line);
+    text-transform:uppercase;
+  }
+  .board-legend b{color:#8A6A1F}
+  .raw{
+    display:block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+    color:#17251E;font-size:14px;min-width:56px;
+  }
+  .pts{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+    letter-spacing:.06em;color:#8A6A1F;border-top:2px dashed var(--brass);
+    margin-top:3px;padding-top:2px;
+  }
   table.board tr.total td{
     background:var(--chalk);font-weight:740;border-top:2px solid var(--ink);
   }
@@ -329,6 +344,7 @@
       <b>Three Joshes. One Name Worth Having.</b>
       <span>15 PTS · 5 EVENTS · PEOPLE'S VOTE ALWAYS OPEN</span>
     </div>
+    <div class="board-legend">EACH CELL: <b>RAW RESULT</b> on top · <b>RANK POINTS (3/2/1)</b> below — points are what count toward the total</div>
     <div class="feed">
       <div class="feed-head">THE PEOPLE'S JOSH — LIVE FEED</div>
       <ul>
@@ -348,33 +364,23 @@
       <tbody>
         <tr>
           <td><span class="ev">36-Hole Gross</span><small>Fri Fossil Trace + Sun Colorado National, combined strokes · low total wins</small></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
+          <td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td>
         </tr>
         <tr>
           <td><span class="ev">Fastest Lap</span><small>Sat · K1 Speed · single best lap of the day, any heat</small></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
+          <td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td>
         </tr>
         <tr>
           <td><span class="ev">Biggest Fish</span><small>Sat · Cherry Creek · longest catch · fallback: first fish → boat-energy vote</small></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
+          <td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td>
         </tr>
         <tr>
           <td><span class="ev">Ticket Haul</span><small>Sun · D&amp;B · most tickets, full stop — spend whatever you want, this one's pay-to-win · receipts or it didn't happen</small></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
-          <td><span class="score">–</span></td>
+          <td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td>
         </tr>
         <tr>
-          <td><span class="ev">The People's Josh</span><small>Ongoing all weekend · non-Joshes cast + re-cast votes with the commissioner anytime · normalized to 3/2/1 when polls close Mon noon · running raw votes shown</small></td>
-          <td><span class="score">0</span></td>
-          <td><span class="score">0</span></td>
-          <td><span class="score">0</span></td>
+          <td><span class="ev">The People's Josh</span><small>Ongoing all weekend · non-Joshes cast + re-cast votes with the commissioner anytime · normalized to 3/2/1 when polls close Mon noon</small></td>
+          <td><span class="raw">0 votes</span><span class="pts">– pts</span></td><td><span class="raw">0 votes</span><span class="pts">– pts</span></td><td><span class="raw">0 votes</span><span class="pts">– pts</span></td>
         </tr>
         <tr class="total">
           <td>TOTAL</td>
@@ -449,8 +455,9 @@
   <ul class="timeline">
     <div class="tl-head" aria-hidden="true"><span>Time</span><span>What</span><span>Who</span></div>
     <li class="loose"><span class="t">MORNING</span><span class="e">Nothing. On purpose.<small>Sleep in, recover from Boulder, greasy breakfast at the house</small></span><span class="who">EVERYONE</span></li>
-    <li><span class="t">12:30 PM</span><span class="e">Depart for K1 Speed Thornton<small>~20 min · 16059 Grant St, Thornton · pack swim bags + cooler in the cars first, in case we run straight to the dock</small></span><span class="who">EVERYONE</span></li>
-    <li class="anchor"><span class="t">1:00 PM</span><span class="e">K1 Speed — go-kart racing ⚠ pending confirmation<small>Grand prix format for 11 = automatic bragging rights table</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">12:05 PM</span><span class="e">Depart for K1 Speed Thornton<small>~20 min · 16059 Grant St, Thornton · pack swim bags + cooler in the cars first, in case we run straight to the dock</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">12:30 PM</span><span class="e">Arrive K1 — check in, waivers, driver briefing<small>$80/racer · arrival time per the booking, don't be the guy who misses grid</small></span><span class="who">EVERYONE</span></li>
+    <li class="anchor"><span class="t">1:00 PM</span><span class="e">K1 Speed — go-kart racing ✓ CONFIRMED<small>Grand prix format for 11 = automatic bragging rights table · fastest single lap feeds the Josh Open</small></span><span class="who">EVERYONE</span></li>
     <li><span class="t">3:00 PM</span><span class="e">Racing wraps — straight back, quick change for the water<small>Swim trunks + towel if you're getting in · BYOB cooler, no glass</small></span><span class="who">EVERYONE</span></li>
     <li class="anchor"><span class="t">4:00 PM</span><span class="e">Depart for Cherry Creek — hard deadline, carpool tight<small>~40–45 min · Cherry Creek State Park west boat ramp, enter off S. Dayton St · park entry fee per car</small></span><span class="who">EVERYONE</span></li>
     <li><span class="t">4:45 PM</span><span class="e">Meet the crew at the walking path overlooking the water<small>West boat ramp just south of the marina — park west of the marina, walk south</small></span><span class="who">EVERYONE</span></li>
@@ -543,7 +550,7 @@
       <h3>Before We Fly</h3>
       <ul class="todo">
         <li><strong>Waivers — every boat rider signs.</strong> Deven forwards the guest portal link, everyone completes pre-trip tasks before 9/5.</li>
-        <li><strong>Confirm K1 Speed</strong> for Sat 1:00 PM (Deven's on it — group races book up on holiday weekends).</li>
+        <li><strong>K1 is confirmed ✓</strong> — create your K1 Speed racer profile online ahead of time to skip the kiosk queue Saturday.</li>
         <li><strong>Fishing licenses</strong> for anyone wetting a line Saturday (buy ahead at cpwshop.com).</li>
         <li><strong>Claim a tee slot</strong> — text Deven your day(s); the sheets here update as they fill. Cancel Fossil Trace extras ≥20h out.</li>
         <li><strong>Brief the Joshes.</strong> Rules go out before the trip — no Josh may claim ignorance of the standings.</li>
