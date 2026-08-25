@@ -275,6 +275,20 @@
     font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:var(--ink);
     min-width:52px;display:inline-block;border-bottom:2px solid var(--sunset);
   }
+  tr.hypo td{
+    background:#FBFAF4;color:#8B968D;border-top:1px dashed var(--brass);
+    padding:9px 6px;text-align:center;
+  }
+  tr.hypo td:first-child{text-align:left;padding-left:10px}
+  .hypoval{
+    font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:#9AA59D;
+    min-width:52px;display:inline-block;
+  }
+  .ranktag{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;
+    letter-spacing:.1em;color:#9AA59D;margin-top:2px;
+  }
+  .ranktag.lead{color:var(--sunset);font-weight:700}
   .josh-rules{padding:12px 16px 14px;font-size:13.5px;border-top:1px solid var(--line)}
   .josh-rules ul{list-style:none;margin-top:6px}
   .josh-rules li{padding:5px 0 5px 22px;position:relative}
@@ -371,7 +385,7 @@
 <header>
   <p class="eyebrow">Labor Day Weekend · Sep 3–7, 2026</p>
   <h1>Ian's Last<br>Round <span class="accent">of Freedom</span></h1>
-  <p class="hero-sub">Four days in Colorado: 36 holes, go-karts, a sunset boat, one night in Boulder, and a Denver send-off. Times, addresses, and confirmation codes all live on this page. Tee sheets and the Josh Open board are maintained by the commissioner's office — send Deven your names and scores.</p>
+  <p class="hero-sub">Four days in Colorado: 36 holes, go-karts, a sunset boat, one night in Boulder, and a Denver send-off. Times, addresses, and confirmation codes all live on this page. Tee sheets and the Josh Open board are maintained by the Commissioner's office — send Deven your names and scores.</p>
   <div class="hero-facts">
     <span class="fact">BASE&nbsp;CAMP: Westminster, CO</span>
     <span class="fact">CREW: 11</span>
@@ -408,7 +422,7 @@
     <div class="feed">
       <div class="feed-head">THE PEOPLE'S JOSH — LIVE FEED</div>
       <ul>
-        <li><span class="fts">AUG 25</span> The commissioner grants Josh S. 20 points for saving the group $700 on car rentals.</li>
+        <li><span class="fts">AUG 25</span> The Commissioner grants Josh S. 20 votes for saving the group $700 on car rentals.</li>
       </ul>
     </div>
     <table class="board">
@@ -438,14 +452,20 @@
           <td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td><td><span class="raw">–</span><span class="pts">– pts</span></td>
         </tr>
         <tr>
-          <td><span class="ev">The People's Josh</span><small>Ongoing all weekend · non-Joshes cast + re-cast votes with the commissioner anytime · normalized to 3/2/1 when polls close Mon noon</small></td>
+          <td><span class="ev">The People's Josh</span><small>Ongoing all weekend · non-Joshes cast + re-cast votes with the Commissioner anytime · normalized to 3/2/1 when polls close Mon noon</small></td>
           <td><span class="raw">20 votes</span><span class="pts">– pts</span></td><td><span class="raw">0 votes</span><span class="pts">– pts</span></td><td><span class="raw">0 votes</span><span class="pts">– pts</span></td>
         </tr>
         <tr class="total">
-          <td>TOTAL</td>
-          <td><span class="totval">0</span></td>
-          <td><span class="totval">0</span></td>
-          <td><span class="totval">0</span></td>
+          <td>LOCKED TOTAL<small>completed events only — this is what's real</small></td>
+          <td><span class="totval">0</span><span class="ranktag">—</span></td>
+          <td><span class="totval">0</span><span class="ranktag">—</span></td>
+          <td><span class="totval">0</span><span class="ranktag">—</span></td>
+        </tr>
+        <tr class="hypo">
+          <td>HYPOTHETICAL<small>if it ended right now — unplayed events split 2/2/2, ties share points</small></td>
+          <td><span class="hypoval">11.0</span><span class="ranktag lead">1ST · BEST JOSH</span></td>
+          <td><span class="hypoval">9.5</span><span class="ranktag">T-2ND</span></td>
+          <td><span class="hypoval">9.5</span><span class="ranktag">T-2ND</span></td>
         </tr>
       </tbody>
     </table>
@@ -455,11 +475,11 @@
         <li>Every event scores <strong>3 / 2 / 1</strong> — nobody leaves an event with zero, everybody leaves an event behind somebody.</li>
         <li>Golf is <strong>one event</strong>: both rounds, gross strokes, summed. Best Josh's whole reputation is worth exactly 20% of the pot. Prove it elsewhere.</li>
         <li>Fishing fallback chain: biggest fish → first fish → boat-energy vote by the group. The walleye owe no Josh anything.</li>
-        <li>The People's Josh is a <strong>rolling vote</strong>: any non-Josh can cast — or change — their vote with the commissioner at any point in the weekend. A great send earns votes; a bad Saturday loses them. Raw votes are normalized to 3/2/1 when polls close at Monday noon, so no Josh is safe at any hour.</li>
-        <li><strong>Tiebreaker:</strong> at commissioner's discretion.</li>
+        <li>The People's Josh is a <strong>rolling vote</strong>: any non-Josh can cast — or change — their vote with the Commissioner at any point in the weekend. A great send earns votes; a bad Saturday loses them. Raw votes are normalized to 3/2/1 when polls close at Monday noon, so no Josh is safe at any hour.</li>
+        <li><strong>Tiebreaker:</strong> at Commissioner's discretion.</li>
         <li><strong>Awards ceremony:</strong> Monday, 12:00 PM sharp at the RiNo rally point — before anyone leaves for flights. Standings are final when read aloud.</li>
         <li><strong>Stakes:</strong> final standings re-rank the names <strong>permanently — for life</strong>. Winner is Best Josh. Second is Better Josh. Third is simply Josh. There are no rematches, no appeals, no future tournaments. The board does not negotiate.</li>
-        <li><strong>Board admin:</strong> results and People's Josh votes go to Deven, and only the commissioner's office updates this page. Running vote counts may be teased or withheld at the commissioner's discretion. No self-reporting, no revisionism.</li>
+        <li><strong>Board admin:</strong> results and People's Josh votes go to Deven, and only the Commissioner's office updates this page. Running vote counts may be teased or withheld at the Commissioner's discretion. No self-reporting, no revisionism.</li>
       </ul>
     </div>
   </div>
@@ -472,11 +492,11 @@
     <img src="hats.jpg" alt="Three navy caps embroidered Josh, Better Josh, and Best Josh">
     <div class="hats-rules">
       <ul>
-        <li><strong>Every morning at breakfast</strong>, the commissioner reads the current standings aloud. Each Josh is then issued the hat matching his rank at that moment.</li>
+        <li><strong>Every morning at breakfast</strong>, the Commissioner reads the current standings aloud. Each Josh is then issued the hat matching his rank at that moment.</li>
         <li>The hat is worn <strong>for the entirety of the day</strong> — the tee box, the boat, the biergarten, the arcade. All of it.</li>
         <li>Hats change hands <strong>only at the morning reading</strong>. Surge all you want at 2 PM; you still wear yesterday's truth until sunrise.</li>
         <li>Thursday night: hats issued on arrival per the standings as they exist that evening.</li>
-        <li>Refusing the hat forfeits 1 point per incident. The hat is the covenant.</li>
+        <li>Refusing the hat is a People's Josh offense — votes docked at the Commissioner's discretion. The hat is the covenant.</li>
       </ul>
     </div>
   </div>
@@ -494,7 +514,7 @@
     <div class="bachelor-info">
       <span class="role">THE BACHELOR · GUEST OF HONOR</span>
       <h3>Ian</h3>
-      <p>The man of the weekend, pictured in his natural habitat. Everything on this page exists because he found someone willing to marry him — an achievement we will spend four days celebrating and questioning in equal measure.</p>
+      <p>The man of the weekend, pictured in his natural habitat. Everything on this page exists because Meg — who we all love, and who somehow saw this exact photo coming and said yes anyway — is marrying him in the fall. Four days to send him off properly. She's getting a good one, even if he'd never survive us saying so directly.</p>
     </div>
   </div>
   <div class="crew-grid">
@@ -540,7 +560,7 @@
     <li><span class="t">7:05 AM</span><span class="e">Check in at the Fossil Trace golf shop, warm up<small>Pay at the shop · carts path-only (drought) · shop (303) 277-8750</small></span><span class="who">GOLF ×8</span></li>
     <li class="anchor"><span class="t">7:30 AM</span><span class="e">Tee group 1 · <span class="conf">430884</span><span class="slots">1) Ian &nbsp;2) Atharva &nbsp;3) Josh R. &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">3 OF 4</span></li>
     <li class="anchor"><span class="t">7:40 AM</span><span class="e">Tee group 2 · <span class="conf">430883</span><span class="slots">1) Deven &nbsp;2) Josh M. &nbsp;3) David &nbsp;4) <span class="tbd">TBD</span></span></span><span class="who">3 OF 4</span></li>
-    <li><span class="t">12:45 PM</span><span class="e">Rounds wrap — lunch + a beer in Golden, full crew<small>Scorecards audited, Josh golf standings noted by the commissioner</small></span><span class="who">EVERYONE</span></li>
+    <li><span class="t">12:45 PM</span><span class="e">Rounds wrap — lunch + a beer in Golden, full crew<small>Scorecards audited, Josh golf standings noted by the Commissioner</small></span><span class="who">EVERYONE</span></li>
     <li class="loose"><span class="t">2:00 PM</span><span class="e">Grocery run — ~1 hour holding slot<small>Weekend provisions: breakfasts, cooler stock, snacks · rest of the crew heads to the house</small></span><span class="who">DEVEN +VOLS</span></li>
     <li><span class="t">3:00 PM</span><span class="e">Back at the house — unload, pool, nap, shower window<small>You will want the nap</small></span><span class="who">EVERYONE</span></li>
     <li class="anchor"><span class="t">4:15 PM</span><span class="e">Ubers to Boulder — don't be late, we have a table<small>~30–40 min · order 3 XLs from the house · nobody drives, everybody drinks</small></span><span class="who">EVERYONE</span></li>
