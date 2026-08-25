@@ -299,6 +299,29 @@
   .feed li.ex{color:#6B7A70;font-style:italic}
   .feed li.open .fts{background:var(--sunset)}
 
+  /* ---------- The Hats ---------- */
+  .hats-card{
+    background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:14px;
+  }
+  .hats-banner{
+    background:linear-gradient(120deg, #1B2C50, #2A4470);
+    color:var(--chalk);padding:12px 16px;
+    display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;
+  }
+  .hats-banner b{
+    font-variation-settings:"wdth" 114;font-weight:840;text-transform:uppercase;font-size:16px;
+  }
+  .hats-banner span{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9FB8E8;
+  }
+  .hats-card img{width:100%;display:block}
+  .hats-rules{padding:12px 16px 14px;font-size:13.5px}
+  .hats-rules ul{list-style:none;margin-top:6px}
+  .hats-rules li{padding:5px 0 5px 22px;position:relative}
+  .hats-rules li::before{
+    content:"▲";position:absolute;left:2px;color:#2A4470;font-size:9px;top:9px;
+  }
+
   /* ---------- Crew ---------- */
   .bachelor-card{
     background:#fff;border:1px solid var(--line);border-left:5px solid var(--sunset);
@@ -437,6 +460,23 @@
         <li><strong>Awards ceremony:</strong> Monday, 12:00 PM sharp at the RiNo rally point — before anyone leaves for flights. Standings are final when read aloud.</li>
         <li><strong>Stakes:</strong> final standings re-rank the names <strong>permanently — for life</strong>. Winner is Best Josh. Second is Better Josh. Third is simply Josh. There are no rematches, no appeals, no future tournaments. The board does not negotiate.</li>
         <li><strong>Board admin:</strong> results and People's Josh votes go to Deven, and only the commissioner's office updates this page. Running vote counts may be teased or withheld at the commissioner's discretion. No self-reporting, no revisionism.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hats-card">
+    <div class="hats-banner">
+      <b>The Hats — Daily Rank Protocol</b>
+      <span>WEAR YOUR STANDING</span>
+    </div>
+    <img src="hats.jpg" alt="Three navy caps embroidered Josh, Better Josh, and Best Josh">
+    <div class="hats-rules">
+      <ul>
+        <li><strong>Every morning at breakfast</strong>, the commissioner reads the current standings aloud. Each Josh is then issued the hat matching his rank at that moment.</li>
+        <li>The hat is worn <strong>for the entirety of the day</strong> — the tee box, the boat, the biergarten, the arcade. All of it.</li>
+        <li>Hats change hands <strong>only at the morning reading</strong>. Surge all you want at 2 PM; you still wear yesterday's truth until sunrise.</li>
+        <li>Thursday night: hats issued on arrival per the standings as they exist that evening.</li>
+        <li>Refusing the hat forfeits 1 point per incident. The hat is the covenant.</li>
       </ul>
     </div>
   </div>
