@@ -220,6 +220,9 @@
   table.owed td small{display:block;color:#8A6A1F;font-weight:400;font-size:11.5px;margin-top:1px}
   table.owed tr.settle td{background:var(--chalk);font-style:italic;color:#5B6A61;font-weight:400}
   table.owed tr.settle td:last-child{font-weight:600;color:#8A6A1F}
+  table.owed th.paid-col, table.owed td.paid-col{text-align:center;width:70px}
+  .paid-yes{color:var(--fairway);font-size:16px;font-weight:700}
+  .paid-no{color:#C9C2AC;font-size:16px}
   .todo{list-style:none}
   .todo li{position:relative;padding:8px 0 8px 30px;border-bottom:1px solid var(--line);font-size:14px}
   .todo li::before{
@@ -733,17 +736,17 @@
       <h3>What Everyone Owes Deven</h3>
       <p class="sub">One number per person, already netted. SUV + gas split excludes David and Shiv (they drove their own cars). Josh S. fronted the full $525.01 Suburban charge himself, so it's subtracted straight from his total. Shiv is owed $125 back for the Fossil Trace ride-along overpayment, so that's subtracted from his.</p>
       <table class="owed">
-        <thead><tr><th>Person</th><th>Net owed to Deven</th></tr></thead>
+        <thead><tr><th>Person</th><th>Net owed to Deven</th><th class="paid-col">Paid</th></tr></thead>
         <tbody>
-          <tr><td>Ian <small>Deven's covering the bachelor — comped</small></td><td>$0.00</td></tr>
-          <tr><td>Josh R.</td><td>$719.90</td></tr>
-          <tr><td>John</td><td>$719.90</td></tr>
-          <tr><td>Josh M.</td><td>$694.90</td></tr>
-          <tr><td>Atharva</td><td>$694.90</td></tr>
-          <tr><td>Thomas</td><td>$694.90</td></tr>
-          <tr><td>David <small>no SUV/gas share (own car) · skipped the D&amp;B split</small></td><td>$587.12</td></tr>
-          <tr><td>Shiv <small>no SUV/gas share (own car) · minus the $125 Deven owes him</small></td><td>$494.90</td></tr>
-          <tr><td>Josh S. <small>full share minus the $525.01 he already paid for the Suburban</small></td><td>$194.89</td></tr>
+          <tr><td>Ian <small>Deven's covering the bachelor — comped</small></td><td>$0.00</td><td class="paid-col"><span class="paid-yes">✓</span></td></tr>
+          <tr><td>Josh R.</td><td>$719.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>John</td><td>$719.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>Josh M.</td><td>$694.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>Atharva</td><td>$694.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>Thomas</td><td>$694.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>David <small>no SUV/gas share (own car) · skipped the D&amp;B split</small></td><td>$587.12</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>Shiv <small>no SUV/gas share (own car) · minus the $125 Deven owes him</small></td><td>$494.90</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
+          <tr><td>Josh S. <small>full share minus the $525.01 he already paid for the Suburban</small></td><td>$194.89</td><td class="paid-col"><span class="paid-no">☐</span></td></tr>
         </tbody>
       </table>
     </div>
