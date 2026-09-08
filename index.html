@@ -202,6 +202,24 @@
   table.money{width:100%;border-collapse:collapse;font-size:14px}
   table.money td{padding:7px 4px;border-bottom:1px solid var(--line)}
   table.money td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600}
+  .owed-card{
+    background:#fff;border:1px solid var(--line);border-left:5px solid var(--brass);
+    border-radius:4px;padding:18px 18px 16px;margin-top:14px;
+  }
+  .owed-card h3{font-size:17px;font-weight:740;font-variation-settings:"wdth" 106;margin-bottom:4px}
+  .owed-card .sub{font-size:13px;color:#5B6A61;margin-bottom:12px}
+  table.owed{width:100%;border-collapse:collapse;font-size:14px}
+  table.owed th{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;background:var(--sand);color:var(--ink);
+    padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);
+  }
+  table.owed th:last-child{text-align:right}
+  table.owed td{padding:8px 10px;border-bottom:1px solid var(--line)}
+  table.owed td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600}
+  table.owed td small{display:block;color:#8A6A1F;font-weight:400;font-size:11.5px;margin-top:1px}
+  table.owed tr.settle td{background:var(--chalk);font-style:italic;color:#5B6A61;font-weight:400}
+  table.owed tr.settle td:last-child{font-weight:600;color:#8A6A1F}
   .todo{list-style:none}
   .todo li{position:relative;padding:8px 0 8px 30px;border-bottom:1px solid var(--line);font-size:14px}
   .todo li::before{
@@ -684,11 +702,9 @@
       <h3>The Damage (group costs)</h3>
       <table class="money">
         <tr><td>Airbnb · 4 nights</td><td>$3,851.21</td></tr>
-        <tr><td>SUV rental · Thu–Mon (Avis, via Josh S. 🏆)</td><td>$525.01</td></tr>
+        <tr><td>SUV rental · Thu–Mon (Avis, via Josh S.)</td><td>$525.01</td></tr>
         <tr><td>Gas for the Suburban</td><td>$75.00</td></tr>
-        <tr><td>Colorado National · per golfer</td><td>$123.00</td></tr>
-        <tr><td>Fossil Trace · per golfer / per rider</td><td>$175 / $50</td></tr>
-        <tr><td>Groceries · Fri run</td><td>split</td></tr>
+        <tr><td>K1 Speed racing</td><td>$900.00</td></tr>
         <tr><td>Applebee's lunch · Fri 9/4</td><td>$300.00</td></tr>
         <tr><td>Breakfast burritos · Sat 9/5</td><td>$150.00</td></tr>
         <tr><td>Pre-boat happy hour · Sat 9/5</td><td>$120.00</td></tr>
@@ -696,14 +712,7 @@
         <tr><td>Lunch at Colorado National · Sun 9/6</td><td>$320.00</td></tr>
         <tr><td>Dinner at Dave &amp; Buster's · Sun 9/6 <small style="color:#8A6A1F">(all except David — water only)</small></td><td>$295.00</td></tr>
         <tr><td>Monday brewery · Mon 9/7 <small style="color:#8A6A1F">(Deven, Ian, Josh S., Josh R., John only)</small></td><td>$125.00</td></tr>
-        <tr><td>Dinner at Dave &amp; Buster's · Sun 9/6 <small style="color:#8A6A1F">(all except David — water only)</small></td><td>$295.00</td></tr>
-        <tr><td>Monday brewery · Mon 9/7 <small style="color:#8A6A1F">(Deven, Ian, Josh S., Josh R., John only)</small></td><td>$125.00</td></tr>
-        <tr><td>K1 Speed · per racer</td><td>$80</td></tr>
-        <tr><td>Food + drinks out · Boulder, D&amp;B, Denver</td><td>~$250–350/pp</td></tr>
-        <tr><td>Saturday's boat</td><td>on Deven 🎣</td></tr>
-        <tr><td><strong>Estimated all-in per person</strong> · excl. flights</td><td><strong>~$1,050–1,300</strong></td></tr>
       </table>
-      <p class="note" style="margin-top:8px">Rough per-person math: Airbnb ~$350 + SUV ~$48 + Sunday golf $123 + Fossil Trace $175 (golfers; riders $50) + K1 $80 + groceries + food/drinks out. Friday riders save $125 vs. playing.</p>
       <p class="note">All shared costs are tracked right here — this table is the ledger, no separate app needed. Final settle-up happens at the end of the trip.</p>
     </div>
     <div class="card sunset">
@@ -718,6 +727,26 @@
         <li><strong>Flight details to the group chat</strong> for airport carpools.</li>
         <li>Airbnb free cancellation ends <strong>Aug 29, 4:00 PM</strong> (not that we're cancelling).</li>
       </ul>
+    </div>
+  </div>
+    <div class="owed-card">
+      <h3>What Everyone Owes Deven</h3>
+      <p class="sub">Deven covered every charge above except the Suburban (Josh S. paid Avis directly — Deven reimburses him $525.01 separately, off this table). Shares below reflect who was actually in on each item.</p>
+      <table class="owed">
+        <thead><tr><th>Person</th><th>Owes Deven</th></tr></thead>
+        <tbody>
+          <tr><td>Ian</td><td>$704.90</td></tr>
+          <tr><td>Josh S.</td><td>$704.90</td></tr>
+          <tr><td>Josh R.</td><td>$704.90</td></tr>
+          <tr><td>John</td><td>$704.90</td></tr>
+          <tr><td>Josh M.</td><td>$679.90</td></tr>
+          <tr><td>Atharva</td><td>$679.90</td></tr>
+          <tr><td>Shiv <small>net of the $125 Deven owes him for the Fossil Trace ride-along overpayment</small></td><td>$554.90</td></tr>
+          <tr><td>Thomas</td><td>$679.90</td></tr>
+          <tr><td>David <small>skipped the D&amp;B split — water only</small></td><td>$647.12</td></tr>
+          <tr class="settle"><td>Josh S. <small>separate: Deven reimburses the Suburban outlay — nets against nothing above</small></td><td>−$525.01</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
